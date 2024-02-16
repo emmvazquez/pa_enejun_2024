@@ -16,4 +16,24 @@ class CiudadController extends BaseController
         $data['ciudades'] = $model->findAll();
         return view('ciudades',$data);
     }
+
+
+    public function postCiudad(){
+        $model = model('CiudadModel');
+        $request = request();
+        $ciudad = $_POST['ciudad'];
+        $abreviatura = $_POST['abreviatura'];
+        $data = [
+            'ciudad'=>$ciudad,
+            'abreviatura' => $abreviatura
+        ];
+        $model->insert($data, false);
+        
+    }
+
+    public function respuesta(){
+        $request = request();
+        echo '<pre>';
+        print_r($request);
+    }
 }

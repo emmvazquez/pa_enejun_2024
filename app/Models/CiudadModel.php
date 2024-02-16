@@ -13,7 +13,7 @@ class CiudadModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['ciudad','abreviatura'];
 
     // Dates
     protected $useTimestamps = true;
